@@ -1,65 +1,60 @@
 # SkillProof — AI-Assisted Skill Evidence Portfolio
 
-> A product-management portfolio project: a complete PRD plus a functional, frontend-only prototype for presenting skills with supporting evidence.
+SkillProof helps students and early-career professionals connect skill claims to supporting projects, GitHub repositories, certificates, and work samples.
 
-SkillProof helps students and early-career professionals turn vague skill claims into structured, reviewable evidence cards. Users can add a skill, describe evidence (project, certificate, code repository, or work sample), track its review status, and preview a shareable public profile.
+> **Trust note:** This frontend prototype does not verify credentials, identity, artifact ownership, or proficiency. Evidence is user-submitted and is not a verified credential.
 
-**Important:** This prototype does not independently verify credentials, authenticate third-party links, or prove that a person owns an artifact. “Evidence added” means the user supplied a reference; it is not a verified credential.
+## Project files
 
-## Project links
-- Product requirements: [`PRD.md`](PRD.md)
-- Prototype: open [`prototype/index.html`](prototype/index.html) in a browser
-- Product assumptions and validation plan: [`docs/validation-plan.md`](docs/validation-plan.md)
-- Metrics: [`docs/metrics.md`](docs/metrics.md)
-
-## MVP features
-- Demo profile with seeded example skills
-- Add a skill and supporting evidence
-- Status tracking: Draft, Evidence added, Ready to share
-- Search/filter skills
-- Profile preview modal
-- Local browser persistence via `localStorage`
-- Responsive layout for desktop and mobile
+- [Product requirements](PRD.md)
+- [Interactive prototype](prototype/index.html)
+- [Validation plan](validation-plan.md)
+- [Metrics](metrics.md)
 
 ## Run locally
+
 No build tools, API keys, database, or backend are required.
 
-1. Download or clone this repository.
-2. Open `prototype/index.html` in a modern browser.
-3. Add skills and evidence. Your changes are stored in that browser's local storage.
-4. Use **Reset demo** to restore the sample data.
+1. Clone or download the repository.
+2. Open `prototype/index.html` in a modern browser; or run a local static server from the repository root:
 
-For best results, run a static server from the repository root:
-```bash
-python -m http.server 8000
-```
-Then open `http://localhost:8000/prototype/`.
+   ```bash
+   python -m http.server 8000
+   ```
+
+3. Open `http://localhost:8000/prototype/`.
+
+## MVP features
+
+- Demo profile with sample skills
+- Add, edit, and delete skill cards
+- Self-reported level, evidence type, URL, notes, and status
+- Search and status filtering
+- Profile preview
+- Browser-local persistence using `localStorage`
+- Reset-to-demo action
+- Responsive desktop and mobile layout
+- URL protocol validation and safe text rendering
 
 ## Tech stack
+
 - HTML5
 - CSS3
 - Vanilla JavaScript
 - `localStorage` for demo persistence
 
-## Product decisions
-- **Trust over inflated claims:** evidence is user-submitted and clearly labeled as such.
-- **Narrow MVP:** no sign-in, AI scoring, scraping, third-party verification, or backend.
-- **Portfolio-first:** the prototype demonstrates the core workflow without collecting sensitive personal data.
+## Limitations
 
-## Known limitations
-- Data stays in the current browser and is not synced across devices.
-- Evidence links are not fetched or checked.
-- Anyone with access to the browser profile may see locally stored demo data.
-- This is a clickable concept prototype, not a production security or identity system.
+- Data remains in the current browser and does not sync across devices.
+- Evidence URLs are not fetched or verified.
+- Anyone with access to the same browser profile may see locally stored data.
+- This is a portfolio prototype, not a production identity or security system.
+- Do not enter confidential or sensitive personal information.
 
-## Suggested next steps
-1. Interview 5 students and 3 internship reviewers.
-2. Test whether evidence cards help reviewers assess a skill faster than a plain skills list.
-3. Add privacy controls and link validation only after validating the core need.
-4. If the concept is validated, design a backend, authentication, abuse reporting, and a transparent review policy.
+## Suggested validation
 
-## Resume bullet
-Designed a PRD and built a responsive, interactive prototype for SkillProof, an evidence-based skills portfolio; defined MVP scope, user stories, and measurable activation and review-efficiency metrics.
+Test skill creation, editing, deletion, search, status filters, URL validation, reload persistence, reset confirmation, profile preview, empty states, keyboard controls, and mobile layout.
 
 ## License
-MIT — see [`LICENSE`](LICENSE).
+
+MIT — see [LICENSE](LICENSE).
